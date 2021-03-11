@@ -46,6 +46,10 @@ ZEND_END_ARG_INFO()
 ZEND_BEGIN_ARG_WITH_TENTATIVE_RETURN_TYPE_INFO_EX(arginfo_class_PDO_PGSql_Ext_pgsqlGetPid, 0, 0, IS_LONG, 0)
 ZEND_END_ARG_INFO()
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_PDO_PGSql_Ext_pgsqlSetNoticeCallback, 0, 1, _IS_BOOL, 0)
+	ZEND_ARG_TYPE_INFO(0, callback, IS_CALLABLE, 1)
+ZEND_END_ARG_INFO()
+
 ZEND_METHOD(PDO_PGSql_Ext, pgsqlCopyFromArray);
 ZEND_METHOD(PDO_PGSql_Ext, pgsqlCopyFromFile);
 ZEND_METHOD(PDO_PGSql_Ext, pgsqlCopyToArray);
@@ -55,6 +59,7 @@ ZEND_METHOD(PDO_PGSql_Ext, pgsqlLOBOpen);
 ZEND_METHOD(PDO_PGSql_Ext, pgsqlLOBUnlink);
 ZEND_METHOD(PDO_PGSql_Ext, pgsqlGetNotify);
 ZEND_METHOD(PDO_PGSql_Ext, pgsqlGetPid);
+ZEND_METHOD(PDO_PGSql_Ext, pgsqlSetNoticeCallback);
 
 static const zend_function_entry class_PDO_PGSql_Ext_methods[] = {
 	ZEND_ME(PDO_PGSql_Ext, pgsqlCopyFromArray, arginfo_class_PDO_PGSql_Ext_pgsqlCopyFromArray, ZEND_ACC_PUBLIC)
@@ -66,5 +71,6 @@ static const zend_function_entry class_PDO_PGSql_Ext_methods[] = {
 	ZEND_ME(PDO_PGSql_Ext, pgsqlLOBUnlink, arginfo_class_PDO_PGSql_Ext_pgsqlLOBUnlink, ZEND_ACC_PUBLIC)
 	ZEND_ME(PDO_PGSql_Ext, pgsqlGetNotify, arginfo_class_PDO_PGSql_Ext_pgsqlGetNotify, ZEND_ACC_PUBLIC)
 	ZEND_ME(PDO_PGSql_Ext, pgsqlGetPid, arginfo_class_PDO_PGSql_Ext_pgsqlGetPid, ZEND_ACC_PUBLIC)
+	ZEND_ME(PDO_PGSql_Ext, pgsqlSetNoticeCallback, arginfo_class_PDO_PGSql_Ext_pgsqlSetNoticeCallback, ZEND_ACC_PUBLIC)
 	ZEND_FE_END
 };
